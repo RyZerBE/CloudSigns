@@ -1,0 +1,10 @@
+name: CloudSigns
+api: 3.0.0
+author: BauboLP
+main: BauboLP\CloudSigns\Main
+version: 1.0
+
+
+permissions:
+  cloud.signs:
+    default: op
