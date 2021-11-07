@@ -11,19 +11,14 @@ use pocketmine\scheduler\AsyncTask;
 use pocketmine\Server;
 use function is_bool;
 
-class SignAsyncTask extends AsyncTask
-{
+class SignAsyncTask extends AsyncTask {
+    private array $founders;
 
-    private $founders;
-
-    public function __construct(array $founders)
-    {
+    public function __construct(array $founders){
         $this->founders = $founders;
     }
 
-
-    public function onRun()
-    {
+    public function onRun(): void{
         $data = [];
         foreach ($this->founders as $key => $signData) {
             $info = CloudSignProvider::getQueryInfo($signData['address'], $signData['port']);
@@ -32,8 +27,7 @@ class SignAsyncTask extends AsyncTask
         $this->setResult($data);
     }
 
-    public function onCompletion(Server $server)
-    {
+    public function onCompletion(Server $server): void{
         $result = $this->getResult();
         foreach ($this->founders as $key => $data) {
             foreach (CloudSignProvider::getCloudSigns() as $cloudSign) {
