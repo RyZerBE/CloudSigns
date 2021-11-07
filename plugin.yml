@@ -1,9 +1,7 @@
 name: CloudSigns
 api: 3.0.0
-author: BauboLP
-main: BauboLP\CloudSigns\Main
-version: 1.0
-
+main: ryzerbe\cloudsigns\CloudSigns
+version: 2.0.0
 
 permissions:
   cloud.signs:
